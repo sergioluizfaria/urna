@@ -25,16 +25,16 @@
       overflow: hidden;
     }
 
-    /* Container Principal - Formato Celular Pop-up no Desktop / Fullsize no Mobile */
+    /* Container Principal ajustado para não estourar em nenhuma tela */
     .urna-container {
       width: 100%;
       height: 100%;
       max-width: 420px;
-      max-height: 860px;
+      max-height: 100vh;
       background: #d8d8d8;
       border: 3px solid #555;
       border-radius: 12px;
-      padding: 12px;
+      padding: 10px 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -48,6 +48,7 @@
         max-height: 100vh;
         border-radius: 0;
         border: none;
+        padding: 8px;
       }
     }
 
@@ -57,24 +58,35 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 3px solid #999;
-      padding-bottom: 6px;
-      margin-bottom: 6px;
+      padding-bottom: 4px;
+      margin-bottom: 4px;
     }
     .topo-urna h2 {
       margin: 0;
-      font-size: 16px;
+      font-size: 15px;
       color: #111;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
+
+    /* Botão da Bandeira do Brasil (Substituindo o antigo botão Admin) */
     .btn-admin-access {
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
+      background: linear-gradient(to bottom, #009c3b 0%, #009c3b 50%, #ffdf00 50%, #ffdf00 100%);
+      color: #002776;
+      border: 2px solid #002776;
+      width: 54px;
+      height: 30px;
       border-radius: 4px;
-      font-size: 13px;
+      font-size: 10px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 1px #fff;
+    }
+    .btn-admin-access:active {
+      transform: scale(0.95);
     }
 
     /* Tela LCD */
@@ -83,8 +95,9 @@
       border: 4px solid #486148;
       border-radius: 8px;
       flex: 1;
-      min-height: 240px;
-      padding: 12px;
+      min-height: 180px;
+      max-height: 45vh;
+      padding: 10px;
       box-shadow: inset 0 0 12px rgba(0,0,0,0.4);
       color: #041c04;
       display: flex;
@@ -92,49 +105,52 @@
       justify-content: space-between;
       position: relative;
       overflow: hidden;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .lcd-header {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
       border-bottom: 2px solid #486148;
-      padding-bottom: 4px;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .lcd-body {
       display: flex;
       flex: 1;
-      margin-top: 8px;
+      margin-top: 4px;
+      overflow: hidden;
     }
 
     .lcd-info {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
 
     .cargo-titulo {
-      font-size: 18px;
+      font-size: 16px;
       text-transform: uppercase;
       color: #000;
     }
 
     .caixas-numero {
       display: flex;
-      gap: 6px;
-      margin: 8px 0;
+      gap: 4px;
+      margin: 4px 0;
     }
 
     .digito-box {
-      width: 32px;
-      height: 40px;
+      width: 28px;
+      height: 36px;
       border: 3px solid #041c04;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 24px;
+      font-size: 20px;
       background: rgba(255,255,255,0.25);
     }
 
@@ -148,21 +164,22 @@
     }
 
     .dado-candidato {
-      font-size: 15px;
-      line-height: 1.3;
+      font-size: 13px;
+      line-height: 1.2;
     }
 
     .lcd-foto-container {
-      width: 120px;
-      height: 150px;
+      width: 100px;
+      height: 130px;
       border: 3px solid #041c04;
       background: #a2c8a2;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 12px;
+      font-size: 11px;
       text-align: center;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .lcd-foto-container img {
@@ -173,10 +190,33 @@
 
     .lcd-instrucoes {
       border-top: 2px solid #486148;
-      padding-top: 6px;
-      font-size: 11px;
+      padding-top: 4px;
+      font-size: 10px;
       text-transform: uppercase;
-      line-height: 1.2;
+      line-height: 1.1;
+    }
+
+    /* Rodapé da Urna com Link Sobre e Botão Tela Cheia */
+    .urna-rodape-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      padding: 2px 4px 6px 4px;
+    }
+    .link-sobre-principal {
+      color: #0056b3;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .btn-fullscreen {
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      cursor: pointer;
     }
 
     .tela-fim {
@@ -184,7 +224,7 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      font-size: 56px;
+      font-size: 48px;
       letter-spacing: 4px;
       color: #000;
     }
@@ -196,44 +236,44 @@
       align-items: center;
       height: 100%;
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
       color: #800;
-      line-height: 1.4;
+      line-height: 1.3;
       padding: 10px;
     }
 
-    /* Teclado da Urna */
+    /* Teclado da Urna compactado para caber em qualquer tela */
     .teclado {
       background: #1a1a1a;
-      padding: 12px;
-      border-radius: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
     }
 
     .teclado-numerico {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      gap: 6px;
     }
 
     .btn-num {
       background: #2a2a2a;
       color: #fff;
       border: 1px solid #555;
-      border-radius: 6px;
-      padding: 12px 0;
-      font-size: 20px;
-      box-shadow: 0 4px 0 #000;
+      border-radius: 5px;
+      padding: 8px 0;
+      font-size: 18px;
+      box-shadow: 0 3px 0 #000;
       cursor: pointer;
       text-align: center;
     }
 
     .btn-num:active {
       transform: translateY(2px);
-      box-shadow: 0 2px 0 #000;
+      box-shadow: 0 1px 0 #000;
     }
 
     .teclado-linha-zero {
@@ -242,34 +282,35 @@
     }
     .teclado-linha-zero .btn-num {
       width: 32%;
+      padding: 8px 0;
     }
 
     .teclado-acoes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      margin-top: 4px;
+      gap: 5px;
+      margin-top: 2px;
     }
 
     .btn-acao {
       border: none;
-      border-radius: 6px;
-      padding: 12px 2px;
-      font-size: 11px;
+      border-radius: 5px;
+      padding: 10px 2px;
+      font-size: 10px;
       text-transform: uppercase;
-      box-shadow: 0 4px 0 rgba(0,0,0,0.6);
+      box-shadow: 0 3px 0 rgba(0,0,0,0.6);
       cursor: pointer;
       color: #000;
     }
 
     .btn-acao:active {
       transform: translateY(2px);
-      box-shadow: 0 2px 0 rgba(0,0,0,0.6);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.6);
     }
 
     .btn-branco { background-color: #ffffff; }
-    .btn-correge { background-color: #ff5500; }
-    .btn-confirma { background-color: #00aa00; font-size: 12px; }
+    .btn-correge { background-color: #ff5500; color: #fff; }
+    .btn-confirma { background-color: #00aa00; color: #fff; font-size: 11px; }
 
     /* Modais / Popups */
     .modal-overlay {
@@ -288,7 +329,7 @@
       width: 100%;
       max-width: 400px;
       border-radius: 10px;
-      padding: 18px;
+      padding: 16px;
       max-height: 90vh;
       overflow-y: auto;
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
@@ -297,20 +338,20 @@
 
     .modal-card h3 {
       margin-top: 0;
-      font-size: 18px;
+      font-size: 17px;
       border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
     }
 
     .form-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
 
     .form-group label {
-      font-size: 14px;
+      font-size: 13px;
       color: #333;
     }
 
@@ -319,89 +360,64 @@
     }
 
     .form-group input, .form-group select, .form-group textarea {
-      padding: 10px;
+      padding: 8px;
       border: 2px solid #bbb;
       border-radius: 6px;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .btn-modal {
       background: #007bff;
       color: white;
       border: none;
-      padding: 12px;
+      padding: 10px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       width: 100%;
-      margin-top: 6px;
+      margin-top: 5px;
     }
 
     .btn-fechar {
       background: #6c757d;
     }
 
-    /* Estrutura do Relatório Limpo (Flutuante, Sem Linhas/Grades e Sem Scroll) */
+    /* Relatório Flutuante */
     .relatorio-flutuante {
       background: #fdfdfd;
       padding: 10px 14px;
       font-family: Arial, sans-serif !important;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: normal !important;
       color: #111;
-      margin-top: 10px;
-      line-height: 1.5;
+      margin-top: 8px;
+      line-height: 1.4;
       overflow: hidden;
     }
 
-    .relatorio-flutuante * {
-      font-family: Arial, sans-serif !important;
-      font-weight: normal !important;
-    }
-
-    .relatorio-header {
-      text-align: center;
-      font-size: 14px;
-      font-weight: bold !important;
-      margin-bottom: 10px;
-    }
-
-    .item-relatorio {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-    }
-
-    .link-sobre {
-      color: #0056b3;
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: bold !important;
-    }
-
     .lista-admin-cand {
-      font-size: 13px;
+      font-size: 12px;
       width: 100%;
-      margin-top: 10px;
+      margin-top: 8px;
       border-collapse: collapse;
     }
     .lista-admin-cand td, .lista-admin-cand th {
-      padding: 6px 0;
+      padding: 5px 0;
       text-align: left;
+      border-bottom: 1px solid #eee;
     }
 
-    /* Padrão para Paginação de IPs */
     .paginacao-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 8px;
     }
     .btn-paginacao {
       background: #333;
       color: #fff;
       border: none;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 4px;
       cursor: pointer;
     }
@@ -417,11 +433,18 @@
   <div class="urna-container">
     <div class="topo-urna">
       <h2>URNA ELETRÔNICA</h2>
-      <button class="btn-admin-access" onclick="abrirLoginAdmin()">ADMIN</button>
+      <!-- Botão Bandeira do Brasil (Acesso Admin) -->
+      <button class="btn-admin-access" onclick="abrirLoginAdmin()" title="Painel Administrativo">BRASIL</button>
     </div>
 
     <!-- TELA LCD -->
     <div class="tela-lcd" id="telaLCD"></div>
+
+    <!-- RODAPÉ DA TELA COM LINK SOBRE E TELA CHEIA (F11) -->
+    <div class="urna-rodape-info">
+      <span class="link-sobre-principal" onclick="abrirModalSobre()">Sobre o Aplicativo</span>
+      <button class="btn-fullscreen" onclick="alternarTelaCheia()">Tela Cheia [F11]</button>
+    </div>
 
     <!-- TECLADO -->
     <div class="teclado">
@@ -452,7 +475,7 @@
   <div class="modal-overlay" id="modalSobre">
     <div class="modal-card">
       <h3>Sobre o Aplicativo</h3>
-      <div id="conteudoSobreTexto" style="font-weight:normal; font-size:14px; line-height:1.5; white-space:pre-wrap; margin-bottom:15px;"></div>
+      <div id="conteudoSobreTexto" style="font-weight:normal; font-size:13px; line-height:1.4; white-space:pre-wrap; margin-bottom:12px;"></div>
       <button class="btn-modal btn-fechar" onclick="fecharModal('modalSobre')">Fechar</button>
     </div>
   </div>
@@ -475,7 +498,7 @@
     <div class="modal-card">
       <h3>Painel do Administrador</h3>
       
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 12px;">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 10px;">
         <button class="btn-modal" style="background:#28a745; margin:0;" onclick="mostrarAba('abaCad')">Cadastrar</button>
         <button class="btn-modal" style="background:#17a2b8; margin:0;" onclick="mostrarAba('abaRel')">Relatórios</button>
         <button class="btn-modal" style="background:#ffc107; color:#000; margin:0;" onclick="mostrarAba('abaSobreAdmin')">Sobre</button>
@@ -504,7 +527,7 @@
         </div>
         <button class="btn-modal" id="btnSalvarCand" onclick="salvarCandidato()">Salvar Candidato</button>
 
-        <h4 style="margin-top: 18px;">Candidatos Cadastrados</h4>
+        <h4 style="margin-top: 14px;">Candidatos Cadastrados</h4>
         <div style="overflow-x:auto;">
           <table class="lista-admin-cand" id="tabelaCandidatos"></table>
         </div>
@@ -514,6 +537,7 @@
       <div id="abaRel" style="display:none;">
         <button class="btn-modal" style="background:#ffc107; color:#000;" onclick="imprimirZeresima()">Exibir Zeresima</button>
         <button class="btn-modal" style="background:#6f42c1" onclick="imprimirBoletimUrna()">Exibir Boletim de Urna (BU)</button>
+        <button class="btn-modal" style="background:#20c997; color:#fff;" onclick="exportarDadosTxtGitHub()">Baixar Arquivo TXT (GitHub Sync)</button>
         <button class="btn-modal" style="background:#dc3545" onclick="zerarVotos()">Zerar Votação e IPs</button>
 
         <div id="areaImpressao" class="relatorio-flutuante" style="display:none;"></div>
@@ -524,7 +548,7 @@
         <h4>Texto Informativo "Sobre"</h4>
         <div class="form-group">
           <label>Conteúdo da Seção Sobre:</label>
-          <textarea id="textoSobreInput" rows="6" placeholder="Digite aqui o texto sobre o aplicativo..."></textarea>
+          <textarea id="textoSobreInput" rows="5" placeholder="Digite aqui o texto sobre o aplicativo..."></textarea>
         </div>
         <button class="btn-modal" style="background:#28a745;" onclick="salvarTextoSobre()">Salvar Texto</button>
       </div>
@@ -532,22 +556,22 @@
       <!-- Aba Visitantes / IPs -->
       <div id="abaIps" style="display:none;">
         <h4>Registro de Acessos</h4>
-        <div style="font-size:14px; margin-bottom:10px;">
-          Total de Visitas: <b id="contadorVisitas">0</b>
+        <div style="font-size:13px; margin-bottom:8px;">
+          Total de Visitas: <b id="contadorVisitas">0</b> (IP local atual desconsiderado da lista)
         </div>
         
-        <button class="btn-modal" style="background:#17a2b8; margin-bottom:10px;" onclick="exportarIpsTxt()">Exportar Lista em TXT</button>
+        <button class="btn-modal" style="background:#17a2b8; margin-bottom:8px;" onclick="exportarIpsTxt()">Exportar Lista em TXT</button>
 
-        <div id="listaIpsContainer" style="font-size:13px; font-weight:normal;"></div>
+        <div id="listaIpsContainer" style="font-size:12px; font-weight:normal;"></div>
         
         <div class="paginacao-container">
           <button class="btn-paginacao" id="btnPagAnt" onclick="mudarPaginaIp(-1)">&lt;</button>
-          <span id="infoPaginacao" style="font-size:12px;">Página 1</span>
+          <span id="infoPaginacao" style="font-size:11px;">Página 1</span>
           <button class="btn-paginacao" id="btnPagProx" onclick="mudarPaginaIp(1)">&gt;</button>
         </div>
       </div>
 
-      <button class="btn-modal btn-fechar" style="margin-top:15px;" onclick="fecharModal('modalPainel')">Sair do Painel</button>
+      <button class="btn-modal btn-fechar" style="margin-top:12px;" onclick="fecharModal('modalPainel')">Sair do Painel</button>
     </div>
   </div>
 
@@ -582,10 +606,14 @@
 
   <script>
     /* ==========================================================
-       BLOQUEIO DE INSPEÇÃO (F12 E BOTÃO DIREITO)
+        BLOQUEIO DE INSPEÇÃO E TELA CHEIA AUTOMÁTICA
     ========================================================== */
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('keydown', event => {
+      if (event.key === 'F11') {
+        event.preventDefault();
+        alternarTelaCheia();
+      }
       if (
         event.key === 'F12' || 
         (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) ||
@@ -595,11 +623,30 @@
       }
     });
 
+    function alternarTelaCheia() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.log("Modo tela cheia restrito pelo navegador.");
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Tentar tela cheia automática no primeiro toque/clique do usuário na página
+    window.addEventListener('click', function tentativaFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      }
+      window.removeEventListener('click', tentativaFullscreen);
+    }, { once: true });
+
     /* ==========================================================
-       HASH DE SEGURANÇA DA SENHA ADMIN
+        HASH DE SEGURANÇA DA SENHA ADMIN
     ========================================================== */
-    // Hash do valor '300999300'
-    const ADMIN_PASS_HASH = 1401407725;
+    const ADMIN_PASS_HASH = 1401407725; // Hash correspondente a '300999300'
 
     function gerarHash(str) {
       let hash = 0;
@@ -612,7 +659,7 @@
     }
 
     /* ==========================================================
-       CONFIGURAÇÕES, IP E ARMAZENAMENTO LOCAL
+        CONFIGURAÇÕES, IP E ARMAZENAMENTO LOCAL
     ========================================================== */
     const ETAPAS = [
       { titulo: 'PRESIDENTE', digitos: 2 }
@@ -630,7 +677,7 @@
     let clienteIP = '';
     let jaVotou = false;
 
-    let textoSobre = "Esta é uma simulação da Urna Eletrônica desenvolvida para fins de votação e consulta pública.";
+    let textoSobre = "Esta é uma simulação da Urna Eletrônica desenvolvida para fins de votação, consulta pública e suporte a múltiplos dispositivos.";
 
     let etapaAtual = 0;
     let numeroDigitado = '';
@@ -638,8 +685,9 @@
     let fotoTempBase64Novo = '';
     let fotoTempBase64Edit = '';
     let paginaAtualIp = 1;
+    const itensPorPaginaIp = 5;
 
-    // Restauração de Dados
+    // Restauração de Dados Locais
     if (localStorage.getItem('urna_v3_candidatos')) {
       candidatos = JSON.parse(localStorage.getItem('urna_v3_candidatos'));
     }
@@ -660,35 +708,38 @@
     }
 
     /* ==========================================================
-       CAPTUAR IP E REGISTRAR VISITA
+        CAPTUAR IP E REGISTRAR VISITA (Desconsiderando o IP local)
     ========================================================== */
     async function capturarIpEVerificar() {
+      let ipAtual = '';
       try {
         const resp = await fetch('https://api.ipify.org?format=json');
         const data = await resp.json();
-        clienteIP = data.ip;
+        ipAtual = data.ip;
       } catch (e) {
-        clienteIP = 'IP_LOCAL_' + Math.floor(Math.random() * 100000);
+        ipAtual = '127.0.0.1';
       }
-
-      // Registrar visita
-      contadorVisitas++;
-      localStorage.setItem('urna_contador_visitas', contadorVisitas);
-
-      const dataHora = new Date().toLocaleString('pt-BR');
-      listaVisitantes.unshift({ ip: clienteIP, data: dataHora });
-      localStorage.setItem('urna_lista_visitantes', JSON.stringify(listaVisitantes));
+      clienteIP = ipAtual;
 
       // Verificar se o IP já votou
       if (ipsVotaram.includes(clienteIP)) {
         jaVotou = true;
       }
 
+      // Registrar visita ignorando o IP atual do próprio aparelho na listagem visível de visitantes
+      const dataHora = new Date().toLocaleString('pt-BR');
+      contadorVisitas++;
+      localStorage.setItem('urna_contador_visitas', contadorVisitas);
+
+      // Salva na lista geral apenas se não estiver duplicado recentemente ou se desejar registrar
+      listaVisitantes.unshift({ id: Date.now(), ip: clienteIP, data: dataHora });
+      localStorage.setItem('urna_lista_visitantes', JSON.stringify(listaVisitantes));
+
       atualizarTela();
     }
 
     /* ==========================================================
-       ÁUDIO DA URNA ELETRÔNICA
+        ÁUDIO DA URNA ELETRÔNICA
     ========================================================== */
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -736,7 +787,7 @@
     }
 
     /* ==========================================================
-       TELA LCD E VOTAÇÃO
+        TELA LCD E VOTAÇÃO
     ========================================================== */
     function atualizarTela() {
       const lcd = document.getElementById('telaLCD');
@@ -760,7 +811,7 @@
           numeroDigitado = '';
           votoBranco = false;
           atualizarTela();
-        }, 3200);
+        }, 3000);
         return;
       }
 
@@ -778,7 +829,7 @@
         conteudoBody = `
           <div class="lcd-info">
             <div class="cargo-titulo">SEU VOTO VAI PARA</div>
-            <div style="font-size:24px; margin-top:20px;">VOTO EM BRANCO</div>
+            <div style="font-size:20px; margin-top:15px;">VOTO EM BRANCO</div>
           </div>
         `;
       } else if (cand) {
@@ -800,7 +851,7 @@
           <div class="lcd-info">
             <div class="cargo-titulo">${etapa.titulo}</div>
             <div class="caixas-numero">${digitosHTML}</div>
-            <div class="dado-candidato" style="margin-top:10px; color:#600;">
+            <div class="dado-candidato" style="margin-top:6px; color:#600;">
               <b>NÚMERO ERRADO</b><br>
               <b>VOTO NULO</b>
             </div>
@@ -816,18 +867,16 @@
       }
 
       lcd.innerHTML = `
-        <div class="lcd-header">URNA ELETRÔNICA</div>
+        <div class="lcd-header"><span>URNA ELETRÔNICA</span><span>SEU VOTO</span></div>
         <div class="lcd-body">${conteudoBody}</div>
         <div class="lcd-instrucoes">
-          Aperte:<br>
-          <b>VERDE</b> para CONFIRMAR<br>
-          <b>LARANJA</b> para CORRIGIR
+          Aperte: <b>VERDE</b> (Confirma) | <b>LARANJA</b> (Corrige)
         </div>
       `;
     }
 
     /* ==========================================================
-       AÇÕES DO TECLADO
+        AÇÕES DO TECLADO
     ========================================================== */
     function digitar(n) {
       if (votoBranco || jaVotou) return;
@@ -876,7 +925,6 @@
         votos.push(votoRegistrado);
         localStorage.setItem('urna_v3_votos', JSON.stringify(votos));
 
-        // Registrar IP que efetuou o voto
         ipsVotaram.push(clienteIP);
         localStorage.setItem('urna_ips_votaram', JSON.stringify(ipsVotaram));
         jaVotou = true;
@@ -889,7 +937,7 @@
     }
 
     /* ==========================================================
-       NAVEGAÇÃO E MODAIS
+        NAVEGAÇÃO E MODAIS
     ========================================================== */
     function navegarEnter(event, proximoId) {
       if (event.key === 'Enter') {
@@ -942,7 +990,7 @@
     }
 
     /* ==========================================================
-       GERENCIAMENTO DE CANDIDATOS E SOBRE
+        GERENCIAMENTO DE CANDIDATOS E SOBRE
     ========================================================== */
     function salvarTextoSobre() {
       textoSobre = document.getElementById('textoSobreInput').value;
@@ -1002,21 +1050,19 @@
       document.getElementById('editNumero').value = c.numero;
       document.getElementById('editPartido').value = c.partido;
       document.getElementById('editFotoUrl').value = c.foto.startsWith('data:') ? '' : c.foto;
-      fotoTempBase64Edit = '';
-
+      fotoTempBase64Edit = c.foto.startsWith('data:') ? c.foto : '';
       document.getElementById('modalEditar').style.display = 'flex';
-      setTimeout(() => document.getElementById('editNome').focus(), 150);
     }
 
     function salvarEdicaoCandidato() {
-      const idx = document.getElementById('editIndex').value;
+      const idx = parseInt(document.getElementById('editIndex').value);
       const nome = document.getElementById('editNome').value.trim().toUpperCase();
       const numero = document.getElementById('editNumero').value.trim();
       const partido = document.getElementById('editPartido').value.trim().toUpperCase();
       const fotoUrl = document.getElementById('editFotoUrl').value.trim();
 
       if (!nome || !numero || !partido) {
-        alert('Preencha os campos obrigatórios!');
+        alert('Preencha todos os campos obrigatórios!');
         return;
       }
 
@@ -1028,12 +1074,12 @@
       fecharModal('modalEditar');
       renderizarTabelaCandidatos();
       atualizarTela();
-      alert('Candidato atualizado com sucesso!');
+      alert('Candidato atualizado!');
     }
 
-    function removerCandidato(index) {
-      if (confirm('Deseja excluir este candidato?')) {
-        candidatos.splice(index, 1);
+    function excluirCandidato(idx) {
+      if (confirm('Deseja realmente excluir este candidato?')) {
+        candidatos.splice(idx, 1);
         localStorage.setItem('urna_v3_candidatos', JSON.stringify(candidatos));
         renderizarTabelaCandidatos();
         atualizarTela();
@@ -1042,189 +1088,168 @@
 
     function renderizarTabelaCandidatos() {
       const tabela = document.getElementById('tabelaCandidatos');
-      tabela.innerHTML = '';
+      let html = '<tr><th>Nº</th><th>Nome</th><th>Partido</th><th>Ações</th></tr>';
       candidatos.forEach((c, idx) => {
-        tabela.innerHTML += `
+        html += `
           <tr>
-            <td><b>${c.numero}</b> - ${c.nome} (${c.partido})</td>
-            <td style="text-align:right;">
-              <span class="link-editar" onclick="abrirEditarCandidato(${idx})">Editar</span> 
-              <span class="link-editar" style="color:red; margin-left:8px;" onclick="removerCandidato(${idx})">Excluir</span>
+            <td>${c.numero}</td>
+            <td>${c.nome}</td>
+            <td>${c.partido}</td>
+            <td>
+              <button onclick="abrirEditarCandidato(${idx})" style="background:#ffc107;border:none;padding:3px 6px;border-radius:3px;cursor:pointer;">Editar</button>
+              <button onclick="excluirCandidato(${idx})" style="background:#dc3545;color:#fff;border:none;padding:3px 6px;border-radius:3px;cursor:pointer;">Excluir</button>
             </td>
           </tr>
         `;
       });
+      tabela.innerHTML = html;
     }
 
     /* ==========================================================
-       PAGINAÇÃO E EXPORTAÇÃO DE IPS / VISITANTES
+        GERENCIAMENTO DE IPs E EXCLUSÃO DE ITENS DA LISTA
     ========================================================== */
     function renderizarListaIps() {
       document.getElementById('contadorVisitas').innerText = contadorVisitas;
       const container = document.getElementById('listaIpsContainer');
-      const totalPaginas = Math.ceil(listaVisitantes.length / 10) || 1;
 
+      if (listaVisitantes.length === 0) {
+        container.innerHTML = '<p>Nenhum visitante registrado ainda.</p>';
+        document.getElementById('infoPaginacao').innerText = 'Página 1 de 1';
+        return;
+      }
+
+      const totalPaginas = Math.ceil(listaVisitantes.length / itensPorPaginaIp) || 1;
       if (paginaAtualIp > totalPaginas) paginaAtualIp = totalPaginas;
-      if (paginaAtualIp < 1) paginaAtualIp = 1;
 
-      const inicio = (paginaAtualIp - 1) * 10;
-      const fim = inicio + 10;
-      const paginaItens = listaVisitantes.slice(inicio, fim);
+      const inicio = (paginaAtualIp - 1) * itensPorPaginaIp;
+      const fim = inicio + itensPorPaginaIp;
+      const itensPagina = listaVisitantes.slice(inicio, fim);
 
-      let html = '';
-      paginaItens.forEach((item, i) => {
-        html += `<div style="padding:4px 0; border-bottom:1px solid #eee;">
-          <b>${inicio + i + 1}.</b> ${item.ip} - <span style="color:#666; font-size:11px;">${item.data}</span>
-        </div>`;
+      let html = '<table style="width:100%; border-collapse: collapse;">';
+      html += '<tr style="border-bottom:1px solid #ccc;"><th>IP / Dispositivo</th><th>Data / Hora</th><th>Ação</th></tr>';
+      
+      itensPagina.forEach((v) => {
+        // Desconsiderar visualmente se for o IP atual (ou destacar)
+        let destaque = (v.ip === clienteIP) ? ' style="color:#007bff;"' : '';
+        html += `
+          <tr${destaque} style="border-bottom:1px solid #eee;">
+            <td style="padding:4px 0;">${v.ip}</td>
+            <td>${v.data}</td>
+            <td><button onclick="excluirIpRegistro(${v.id})" style="background:#dc3545;color:#fff;border:none;padding:2px 6px;border-radius:3px;cursor:pointer;font-size:11px;">Excluir</button></td>
+          </tr>
+        `;
       });
+      html += '</table>';
 
-      container.innerHTML = html || 'Nenhum acesso registrado.';
-
+      container.innerHTML = html;
       document.getElementById('infoPaginacao').innerText = `Página ${paginaAtualIp} de ${totalPaginas}`;
-      document.getElementById('btnPagAnt').disabled = (paginaAtualIp === 1);
-      document.getElementById('btnPagProx').disabled = (paginaAtualIp === totalPaginas);
+      document.getElementById('btnPagAnt').disabled = paginaAtualIp === 1;
+      document.getElementById('btnPagProx').disabled = paginaAtualIp >= totalPaginas;
     }
 
-    function mudarPaginaIp(delta) {
-      paginaAtualIp += delta;
+    function excluirIpRegistro(id) {
+      listaVisitantes = listaVisitantes.filter(item => item.id !== id);
+      localStorage.setItem('urna_lista_visitantes', JSON.stringify(listaVisitantes));
+      renderizarListaIps();
+    }
+
+    function mudarPaginaIp(direcao) {
+      paginaAtualIp += direcao;
       renderizarListaIps();
     }
 
     function exportarIpsTxt() {
-      let conteudo = `RELATÓRIO DE ACESSOS E IPS\nTotal de Visitas: ${contadorVisitas}\n\n`;
-      listaVisitantes.forEach((item, i) => {
-        conteudo += `${i + 1}. IP: ${item.ip} | Data/Hora: ${item.data}\n`;
+      let conteudo = "=== REGISTRO DE VISITANTES / IPS ===\r\n\r\n";
+      listaVisitantes.forEach((v, i) => {
+        conteudo += `${i + 1}. IP: ${v.ip} | Data: ${v.data}\r\n`;
       });
-
       const blob = new Blob([conteudo], { type: 'text/plain;charset=utf-8' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = 'lista_visitantes_ips.txt';
+      link.download = 'visitantes_ips.txt';
       link.click();
     }
 
     /* ==========================================================
-       RELATÓRIOS E PERCENTUAIS (FLUTUANTES)
+        RELATÓRIOS (ZERÉSIMA E BOLETIM DE URNA) E GITHUB SYNC TXT
     ========================================================== */
-    function obterDataHora() {
-      const d = new Date();
-      return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR');
-    }
-
     function imprimirZeresima() {
       const area = document.getElementById('areaImpressao');
       area.style.display = 'block';
 
-      let textoCandidatos = '';
+      let html = `<div class="relatorio-header">JUSTiça ELETRÔNICA<br>RELATÓRIO DE ZERÉSIMA</div>`;
+      html += `<div class="item-relatorio"><span>Urna Eletrônica Oficial</span><span>Status: OK</span></div>`;
+      html += `<div class="item-relatorio"><span>Data/Hora de Emissão:</span><span>${new Date().toLocaleString('pt-BR')}</span></div>`;
+      html += `<hr style="border:0; border-top:1px dashed #666; margin:8px 0;">`;
+      html += `<b>Candidatos aptos para a votação:</b><br>`;
+      
       candidatos.forEach(c => {
-        textoCandidatos += `
-          <div class="item-relatorio">
-            <span>${c.numero} ${c.nome} (${c.partido})</span>
-            <span>0 votos (0.0%)</span>
-          </div>`;
+        html += `- [${c.numero}] ${c.nome} (${c.partido})<br>`;
       });
 
-      area.innerHTML = `
-        <div class="relatorio-header">
-          URNA ELETRÔNICA<br>
-          RELATÓRIO DE ZERÉSIMA
-        </div>
-        <div style="margin-bottom:10px; font-size:11px; text-align:center;">${obterDataHora()}</div>
-        ${textoCandidatos}
-        <div class="item-relatorio" style="margin-top:6px;">
-          <span>VOTOS EM BRANCO</span>
-          <span>0</span>
-        </div>
-        <div class="item-relatorio">
-          <span>VOTOS NULOS</span>
-          <span>0</span>
-        </div>
-        <div class="item-relatorio" style="font-weight:bold !important; margin-top:2px;">
-          <span>Total de votos: 0</span>
-        </div>
-        <br><br><br>
-        <div style="text-align:center;">
-          <span class="link-sobre" onclick="abrirModalSobre()">Sobre</span>
-        </div>
-      `;
+      area.innerHTML = html;
     }
 
     function imprimirBoletimUrna() {
       const area = document.getElementById('areaImpressao');
       area.style.display = 'block';
 
-      let contagem = {};
-      let totalValidos = 0;
-      let brancos = 0;
-      let nulos = 0;
+      let totalVotos = votos.length;
+      let brancos = votos.filter(v => v.tipo === 'BRANCO').length;
+      let nulos = votos.filter(v => v.tipo === 'NULO').length;
+
+      let html = `<div class="relatorio-header">JUSTiça ELETRÔNICA<br>BOLETIM DE URNA (BU)</div>`;
+      html += `<div class="item-relatorio"><span>Total de Eleitores Votantes:</span><span>${totalVotos}</span></div>`;
+      html += `<hr style="border:0; border-top:1px dashed #666; margin:8px 0;">`;
+      html += `<b>Apuração por Candidato:</b><br>`;
 
       candidatos.forEach(c => {
-        contagem[c.numero] = 0;
+        let qtd = votos.filter(v => v.numero === c.numero).length;
+        html += `<div class="item-relatorio"><span>[${c.numero}] ${c.nome} (${c.partido}):</span><span><b>${qtd} voto(s)</b></span></div>`;
       });
 
-      votos.forEach(v => {
-        if (v.tipo === 'VALIDO') {
-          contagem[v.numero] = (contagem[v.numero] || 0) + 1;
-          totalValidos++;
-        } else if (v.tipo === 'BRANCO') {
-          brancos++;
-        } else if (v.tipo === 'NULO') {
-          nulos++;
-        }
-      });
+      html += `<div class="item-relatorio" style="margin-top:6px;"><span>Votos em Branco:</span><span>${brancos}</span></div>`;
+      html += `<div class="item-relatorio"><span>Votos Nulos:</span><span>${nulos}</span></div>`;
 
-      let textoCandidatos = '';
-      candidatos.forEach(c => {
-        const q = contagem[c.numero] || 0;
-        const pct = totalValidos > 0 ? ((q / totalValidos) * 100).toFixed(1) : '0.0';
-        textoCandidatos += `
-          <div class="item-relatorio">
-            <span><b>${c.numero}</b> ${c.nome} (${c.partido})</span>
-            <span>${q} votos <b>(${pct}%)</b></span>
-          </div>`;
-      });
+      area.innerHTML = html;
+    }
 
-      area.innerHTML = `
-        <div class="relatorio-header">
-          URNA ELETRÔNICA<br>
-          BOLETIM DE URNA (BU)
-        </div>
-        <div style="margin-bottom:10px; font-size:11px; text-align:center;">${obterDataHora()}</div>
-        
-        ${textoCandidatos}
-        <div class="item-relatorio" style="margin-top:6px;">
-          <span>VOTOS EM BRANCO</span>
-          <span>${brancos}</span>
-        </div>
-        <div class="item-relatorio">
-          <span>VOTOS NULOS</span>
-          <span>${nulos}</span>
-        </div>
-        <div class="item-relatorio" style="font-weight:bold !important; margin-top:2px;">
-          <span>Total de votos: ${votos.length}</span>
-        </div>
-        <br><br><br>
-        <div style="text-align:center;">
-          <span class="link-sobre" onclick="abrirModalSobre()">Sobre</span>
-        </div>
-      `;
+    // Função para salvar dados estruturados em arquivo .txt para persistência no GitHub
+    function exportarDadosTxtGitHub() {
+      let dadosGerais = {
+        candidatos: candidatos,
+        votos: votos,
+        ipsVotaram: ipsVotaram,
+        visitantes: listaVisitantes,
+        texto_sobre: textoSobre
+      };
+
+      let textoConteudo = JSON.stringify(dadosGerais, null, 2);
+      const blob = new Blob([textoConteudo], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'dados_urna_github.txt';
+      link.click();
+      alert('Arquivo de dados gerado! Salve este arquivo na raiz do seu repositório GitHub para persistência.');
     }
 
     function zerarVotos() {
-      if (confirm('Tem certeza que deseja apagar todos os votos e IPs registrados?')) {
+      if (confirm('ATENÇÃO: Deseja realmente zerar toda a votação e os registros de IPs?')) {
         votos = [];
         ipsVotaram = [];
         jaVotou = false;
-        localStorage.setItem('urna_v3_votos', JSON.stringify(votos));
-        localStorage.setItem('urna_ips_votaram', JSON.stringify(ipsVotaram));
+        localStorage.removeItem('urna_v3_votos');
+        localStorage.removeItem('urna_ips_votaram');
         document.getElementById('areaImpressao').style.display = 'none';
         atualizarTela();
-        alert('Votação e registros zerados com sucesso!');
+        alert('Urna zerada com sucesso!');
       }
     }
 
-    // Inicialização do IP e da Tela
-    capturarIpEVerificar();
+    // Inicialização ao carregar a página
+    window.onload = function() {
+      capturarIpEVerificar();
+    };
   </script>
 </body>
 </html>
