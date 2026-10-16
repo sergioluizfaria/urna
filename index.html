@@ -25,29 +25,21 @@
       overflow: hidden;
     }
 
-    /* Container Principal: Estilo Celular Fullsize em Mobile e Desktop (Sem bordas laterais) */
+    /* Container Principal: Compacto para Mobile e Desktop sem rolar */
     .urna-container {
       width: 100%;
       height: 100%;
-      max-width: 420px;
-      max-height: 100vh;
+      max-width: 390px;
+      max-height: 680px;
       background: #d8d8d8;
-      border: none;
-      border-radius: 0;
-      padding: 8px 10px;
+      border: 3px solid #444;
+      border-radius: 10px;
+      padding: 5px 6px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       position: relative;
-    }
-
-    @media (min-width: 480px) {
-      .urna-container {
-        border: 3px solid #444;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-      }
     }
 
     /* Topo / Barra Superior */
@@ -56,15 +48,36 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #999;
-      padding-bottom: 3px;
-      margin-bottom: 2px;
+      padding-bottom: 1px;
+      margin-bottom: 1px;
     }
     .topo-urna h2 {
       margin: 0;
-      font-size: 14px;
+      font-size: 12px;
       color: #111;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    .topo-acoes-direita {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+
+    /* Botão de Fechar Popup (X) */
+    .btn-fechar-popup {
+      background: #cc0000;
+      color: #fff;
+      border: 1px solid #900;
+      width: 22px;
+      height: 22px;
+      border-radius: 3px;
+      font-size: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Botão da Bandeira do Brasil (Acesso Admin) */
@@ -72,10 +85,10 @@
       background: linear-gradient(to bottom, #009c3b 0%, #009c3b 50%, #ffdf00 50%, #ffdf00 100%);
       color: #002776;
       border: 2px solid #002776;
-      width: 48px;
-      height: 26px;
-      border-radius: 4px;
-      font-size: 9px;
+      width: 40px;
+      height: 22px;
+      border-radius: 3px;
+      font-size: 8px;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -83,60 +96,55 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.3);
       text-shadow: 0 1px 1px #fff;
     }
-    .btn-admin-access:active {
-      transform: scale(0.95);
-    }
 
-    /* Barra Secundária Superior (Link Sobre e Botão F11 com a mesma formatação) */
+    /* Barra Secundária */
     .barra-secundaria {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #ccc;
-      padding: 3px 6px;
-      border-radius: 4px;
-      margin-bottom: 4px;
-      font-size: 11px;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-bottom: 2px;
+      font-size: 9px;
     }
     .link-sobre-principal, .btn-fullscreen {
       background: #333;
       color: #fff;
       border: none;
-      padding: 3px 8px;
+      padding: 2px 5px;
       border-radius: 3px;
-      font-size: 10px;
+      font-size: 9px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
     }
-    .link-sobre-principal {
-      background: #0056b3;
-    }
+    .link-sobre-principal { background: #0056b3; }
 
-    /* Tela LCD Otimizada para Celular */
+    /* Tela LCD Otimizada */
     .tela-lcd {
       background-color: #8cb88b;
-      border: 3px solid #486148;
-      border-radius: 6px;
+      border: 2px solid #486148;
+      border-radius: 4px;
       flex: 1;
-      min-height: 150px;
+      min-height: 130px;
       max-height: 40vh;
-      padding: 8px;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+      padding: 5px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
       color: #041c04;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .lcd-header {
-      font-size: 11px;
+      font-size: 9px;
       text-transform: uppercase;
-      border-bottom: 2px solid #486148;
-      padding-bottom: 2px;
+      border-bottom: 1px solid #486148;
+      padding-bottom: 1px;
       display: flex;
       justify-content: space-between;
     }
@@ -144,8 +152,9 @@
     .lcd-body {
       display: flex;
       flex: 1;
-      margin-top: 3px;
+      margin-top: 2px;
       overflow: hidden;
+      align-items: center;
     }
 
     .lcd-info {
@@ -156,7 +165,7 @@
     }
 
     .cargo-titulo {
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
       color: #000;
     }
@@ -167,14 +176,15 @@
       margin: 3px 0;
     }
 
+    /* Caixas de dígitos */
     .digito-box {
-      width: 24px;
-      height: 32px;
+      width: 28px;
+      height: 36px;
       border: 2px solid #041c04;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 18px;
+      font-size: 22px;
       background: rgba(255,255,255,0.25);
     }
 
@@ -187,23 +197,26 @@
       50% { border-color: transparent; }
     }
 
+    /* Textos do candidato maiores */
     .dado-candidato {
-      font-size: 12px;
-      line-height: 1.1;
+      font-size: 14px;
+      line-height: 1.3;
     }
 
+    /* Foto maior */
     .lcd-foto-container {
-      width: 85px;
-      height: 110px;
+      width: 95px;
+      height: 120px;
       border: 2px solid #041c04;
       background: #a2c8a2;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 10px;
+      font-size: 9px;
       text-align: center;
       overflow: hidden;
       flex-shrink: 0;
+      margin-left: 6px;
     }
 
     .lcd-foto-container img {
@@ -213,9 +226,9 @@
     }
 
     .lcd-instrucoes {
-      border-top: 2px solid #486148;
-      padding-top: 3px;
-      font-size: 9px;
+      border-top: 1px solid #486148;
+      padding-top: 1px;
+      font-size: 8px;
       text-transform: uppercase;
       line-height: 1.0;
     }
@@ -225,65 +238,51 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      font-size: 40px;
-      letter-spacing: 3px;
+      font-size: 32px;
+      letter-spacing: 2px;
       color: #000;
     }
 
-    .tela-bloqueio {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-align: center;
-      font-size: 13px;
-      color: #800;
-      line-height: 1.2;
-      padding: 6px;
-      overflow-y: auto;
-    }
-
-    /* Tela de Apuração Suspença (Tabela sem linhas e marcações) */
+    /* Apuração sem linhas, com quantidade e percentual */
     .tabela-apuracao-suspensa {
       width: 100%;
-      font-size: 11px;
-      line-height: 1.3;
+      font-size: 10px;
+      line-height: 1.2;
       overflow-y: auto;
       max-height: 100%;
-      padding: 2px;
+      padding: 1px;
     }
     .linha-apuracao {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 3px;
-      padding: 2px 0;
+      margin-bottom: 2px;
+      padding: 0;
       border: none;
     }
 
-    /* Teclado Compacto para caber na tela do celular sem rolar */
+    /* Teclado Lardo e Mais Baixo (Compacto) */
     .teclado {
       background: #1a1a1a;
-      padding: 6px 8px;
-      border-radius: 6px;
+      padding: 3px 5px;
+      border-radius: 5px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
+      gap: 2px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
     }
 
     .teclado-numerico {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 2px;
     }
 
     .btn-num {
       background: #2a2a2a;
       color: #fff;
       border: 1px solid #555;
-      border-radius: 4px;
-      padding: 6px 0;
+      border-radius: 3px;
+      padding: 7px 0;
       font-size: 16px;
       box-shadow: 0 2px 0 #000;
       cursor: pointer;
@@ -301,21 +300,21 @@
     }
     .teclado-linha-zero .btn-num {
       width: 32%;
-      padding: 6px 0;
+      padding: 7px 0;
     }
 
     .teclado-acoes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      margin-top: 2px;
+      gap: 2px;
+      margin-top: 1px;
     }
 
     .btn-acao {
       border: none;
-      border-radius: 4px;
-      padding: 8px 2px;
-      font-size: 9px;
+      border-radius: 3px;
+      padding: 7px 2px;
+      font-size: 8px;
       text-transform: uppercase;
       box-shadow: 0 2px 0 rgba(0,0,0,0.6);
       cursor: pointer;
@@ -329,7 +328,7 @@
 
     .btn-branco { background-color: #ffffff; }
     .btn-correge { background-color: #ff5500; color: #fff; }
-    .btn-confirma { background-color: #00aa00; color: #fff; font-size: 10px; }
+    .btn-confirma { background-color: #00aa00; color: #fff; font-size: 9px; }
 
     /* Modais / Popups */
     .modal-overlay {
@@ -340,16 +339,16 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      padding: 10px;
+      padding: 8px;
     }
 
     .modal-card {
       background: #fff;
       width: 100%;
-      max-width: 380px;
+      max-width: 350px;
       border-radius: 8px;
-      padding: 14px;
-      max-height: 90vh;
+      padding: 10px;
+      max-height: 85vh;
       overflow-y: auto;
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       color: #222;
@@ -357,68 +356,64 @@
 
     .modal-card h3 {
       margin-top: 0;
-      font-size: 15px;
+      font-size: 13px;
       border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+      padding-bottom: 3px;
     }
 
     .form-group {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .form-group label {
-      font-size: 12px;
+      font-size: 10px;
       color: #333;
     }
 
-    .input-uppercase {
-      text-transform: uppercase;
-    }
+    .input-uppercase { text-transform: uppercase; }
 
     .form-group input, .form-group select, .form-group textarea {
-      padding: 7px;
+      padding: 5px;
       border: 2px solid #bbb;
-      border-radius: 5px;
-      font-size: 12px;
+      border-radius: 4px;
+      font-size: 10px;
     }
 
     .btn-modal {
       background: #007bff;
       color: white;
       border: none;
-      padding: 9px;
-      border-radius: 5px;
+      padding: 7px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 10px;
       width: 100%;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
-    .btn-fechar {
-      background: #6c757d;
-    }
+    .btn-fechar { background: #6c757d; }
 
     .relatorio-flutuante {
       background: #fdfdfd;
-      padding: 8px 10px;
-      font-size: 11px;
+      padding: 5px 6px;
+      font-size: 9px;
       color: #111;
-      margin-top: 6px;
-      line-height: 1.3;
+      margin-top: 4px;
+      line-height: 1.2;
       overflow: hidden;
     }
 
     .lista-admin-cand {
-      font-size: 11px;
+      font-size: 9px;
       width: 100%;
-      margin-top: 6px;
+      margin-top: 4px;
       border-collapse: collapse;
     }
     .lista-admin-cand td, .lista-admin-cand th {
-      padding: 4px 0;
+      padding: 2px 0;
       text-align: left;
       border-bottom: 1px solid #eee;
     }
@@ -427,15 +422,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 6px;
+      margin-top: 4px;
     }
     .btn-paginacao {
       background: #333;
       color: #fff;
       border: none;
-      padding: 4px 10px;
-      border-radius: 4px;
+      padding: 2px 6px;
+      border-radius: 3px;
       cursor: pointer;
+      font-size: 9px;
     }
   </style>
 </head>
@@ -445,11 +441,13 @@
   <div class="urna-container">
     <div class="topo-urna">
       <h2>URNA ELETRÔNICA</h2>
-      <!-- Botão Bandeira do Brasil (Acesso Admin) -->
-      <button class="btn-admin-access" onclick="abrirLoginAdmin()" title="Painel Administrativo">BRASIL</button>
+      <div class="topo-acoes-direita">
+        <button class="btn-admin-access" onclick="abrirLoginAdmin()" title="Painel Administrativo">BRASIL</button>
+        <button class="btn-fechar-popup" onclick="fecharJanelaUrna()" title="Sair">X</button>
+      </div>
     </div>
 
-    <!-- BARRA SECUNDÁRIA (Abaixo da linha divisória do título e bandeira) -->
+    <!-- BARRA SECUNDÁRIA -->
     <div class="barra-secundaria">
       <span class="link-sobre-principal" onclick="abrirModalSobre()">Sobre o Aplicativo</span>
       <button class="btn-fullscreen" onclick="alternarTelaCheia()">Tela Cheia [F11]</button>
@@ -487,7 +485,7 @@
   <div class="modal-overlay" id="modalSobre">
     <div class="modal-card">
       <h3>Sobre o Aplicativo</h3>
-      <div id="conteudoSobreTexto" style="font-weight:normal; font-size:12px; line-height:1.4; white-space:pre-wrap; margin-bottom:10px;"></div>
+      <div id="conteudoSobreTexto" style="font-weight:normal; font-size:11px; line-height:1.3; white-space:pre-wrap; margin-bottom:8px;"></div>
       <button class="btn-modal btn-fechar" onclick="fecharModal('modalSobre')">Fechar</button>
     </div>
   </div>
@@ -510,11 +508,12 @@
     <div class="modal-card">
       <h3>Painel do Administrador</h3>
       
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; margin-bottom: 8px;">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; margin-bottom: 5px;">
         <button class="btn-modal" style="background:#28a745; margin:0;" onclick="mostrarAba('abaCad')">Cadastrar</button>
         <button class="btn-modal" style="background:#17a2b8; margin:0;" onclick="mostrarAba('abaRel')">Relatórios</button>
         <button class="btn-modal" style="background:#ffc107; color:#000; margin:0;" onclick="mostrarAba('abaSobreAdmin')">Sobre</button>
         <button class="btn-modal" style="background:#6c757d; margin:0;" onclick="mostrarAba('abaIps')">Visitantes / IPs</button>
+        <button class="btn-modal" style="background:#6f42c1; grid-column: span 2; margin:0;" onclick="mostrarAba('abaPix')">Cadastro PIX / QR Code</button>
       </div>
 
       <!-- Aba Cadastro -->
@@ -539,7 +538,7 @@
         </div>
         <button class="btn-modal" id="btnSalvarCand" onclick="salvarCandidato()">Salvar Candidato</button>
 
-        <h4 style="margin-top: 12px;">Candidatos Cadastrados</h4>
+        <h4 style="margin-top: 8px;">Candidatos Cadastrados</h4>
         <div style="overflow-x:auto;">
           <table class="lista-admin-cand" id="tabelaCandidatos"></table>
         </div>
@@ -567,23 +566,53 @@
 
       <!-- Aba Visitantes / IPs -->
       <div id="abaIps" style="display:none;">
-        <h4>Registro de Acessos</h4>
-        <div style="font-size:12px; margin-bottom:6px;">
-          Total de Visitas: <b id="contadorVisitas">0</b> (IP local desconsiderado)
+        <h4>Registro de Acessos & Múltiplos Votos</h4>
+        <div style="font-size:10px; margin-bottom:4px;">
+          Total de Visitas: <b id="contadorVisitas">0</b>
         </div>
         
-        <button class="btn-modal" style="background:#17a2b8; margin-bottom:6px;" onclick="exportarIpsTxt()">Exportar Lista em TXT</button>
+        <button class="btn-modal" style="background:#17a2b8; margin-bottom:4px;" onclick="exportarIpsTxt()">Exportar Lista em TXT</button>
 
-        <div id="listaIpsContainer" style="font-size:11px; font-weight:normal;"></div>
+        <div id="listaIpsContainer" style="font-size:9px; font-weight:normal;"></div>
         
         <div class="paginacao-container">
           <button class="btn-paginacao" id="btnPagAnt" onclick="mudarPaginaIp(-1)">&lt;</button>
-          <span id="infoPaginacao" style="font-size:10px;">Página 1</span>
+          <span id="infoPaginacao" style="font-size:9px;">Página 1</span>
           <button class="btn-paginacao" id="btnPagProx" onclick="mudarPaginaIp(1)">&gt;</button>
         </div>
       </div>
 
-      <button class="btn-modal btn-fechar" style="margin-top:10px;" onclick="fecharModal('modalPainel')">Sair do Painel</button>
+      <!-- Aba Cadastro PIX -->
+      <div id="abaPix" style="display:none;">
+        <h4>Configuração do PIX</h4>
+        <div class="form-group">
+          <label>Assunto / Sobre do PIX:</label>
+          <input type="text" id="pixAssunto" placeholder="EX: CONTRIBUIÇÃO CAMPANHA" class="input-uppercase">
+        </div>
+        <div class="form-group">
+          <label>Valor do PIX (R$):</label>
+          <input type="text" id="pixValor" placeholder="EX: 10.00 ou deixe em branco">
+        </div>
+        <div class="form-group">
+          <label>Chave PIX:</label>
+          <input type="text" id="pixChave" placeholder="EX: 000.000.000-00 ou email">
+        </div>
+        <div class="form-group">
+          <label>Nome do Beneficiário:</label>
+          <input type="text" id="pixNome" placeholder="EX: NOME DO CANDIDATO" class="input-uppercase">
+        </div>
+        <div class="form-group">
+          <label>Cidade:</label>
+          <input type="text" id="pixCidade" placeholder="EX: SAO PAULO" class="input-uppercase">
+        </div>
+        <div class="form-group">
+          <label>Código Copia e Cola (Payload completo):</label>
+          <textarea id="pixPayload" rows="3" placeholder="Cole aqui o código BR Code / Copia e Cola do PIX"></textarea>
+        </div>
+        <button class="btn-modal" style="background:#28a745;" onclick="salvarConfigPix()">Salvar Dados PIX</button>
+      </div>
+
+      <button class="btn-modal btn-fechar" style="margin-top:6px;" onclick="fecharModal('modalPainel')">Sair do Painel</button>
     </div>
   </div>
 
@@ -618,20 +647,20 @@
 
   <script>
     /* ==========================================================
-        BLOQUEIO DE INSPEÇÃO E TELA CHEIA AUTOMÁTICA
+        ATUALIZAÇÃO AUTOMÁTICA A CADA 35 SEGUNDOS
+    ========================================================== */
+    setInterval(() => {
+      location.reload();
+    }, 600000);
+
+    /* ==========================================================
+        CONTROLE DE TELA CHEIA E FECHAMENTO
     ========================================================== */
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('keydown', event => {
       if (event.key === 'F11') {
         event.preventDefault();
         alternarTelaCheia();
-      }
-      if (
-        event.key === 'F12' || 
-        (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) ||
-        (event.ctrlKey && (event.key === 'U' || event.key === 'u'))
-      ) {
-        event.preventDefault();
       }
     });
 
@@ -645,15 +674,15 @@
       }
     }
 
-    window.addEventListener('click', function tentativaFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
+    function fecharJanelaUrna() {
+      if (confirm('Deseja realmente sair da Urna Eletrônica?')) {
+        window.close();
+        window.location.href = 'about:blank';
       }
-      window.removeEventListener('click', tentativaFullscreen);
-    }, { once: true });
+    }
 
     /* ==========================================================
-        HASH DE SEGURANÇA DA SENHA ADMIN
+        SEGURANÇA E DADOS
     ========================================================== */
     const ADMIN_PASS_HASH = 1401407725; // '300999300'
 
@@ -667,9 +696,6 @@
       return Math.abs(hash);
     }
 
-    /* ==========================================================
-        CONFIGURAÇÕES E ARMAZENAMENTO COMPARTILHADO (GITHUB SYNC TXT)
-    ========================================================== */
     const ETAPAS = [
       { titulo: 'PRESIDENTE', digitos: 2 }
     ];
@@ -681,12 +707,24 @@
 
     let votos = [];
     let ipsVotaram = [];
+    let ipsPermitidosMultiplos = [];
     let listaVisitantes = [];
     let contadorVisitas = 0;
     let clienteIP = '';
-    let jaVotou = false;
+    
+    // Controle de telas: 'apuracao' (Início), 'votacao', 'qrcode'
+    let telaAtual = 'apuracao';
 
     let textoSobre = "Esta é uma simulação da Urna Eletrônica desenvolvida para fins de votação, consulta pública e suporte a múltiplos dispositivos.";
+    
+    let configPix = {
+      assunto: 'CONTRIBUICAO DE APOIO',
+      valor: '0.00',
+      chave: 'pix@urnaeletronica.com',
+      nome: 'URNA ELETRONICA BRASIL',
+      cidade: 'BRASILIA',
+      payload: '00020126580014br.gov.bcb.pix0136pix@urnaeletronica.com5204000053039865802BR5925URNA ELETRONICA BRASIL6009BRASILIA6304'
+    };
 
     let etapaAtual = 0;
     let numeroDigitado = '';
@@ -696,26 +734,18 @@
     let paginaAtualIp = 1;
     const itensPorPaginaIp = 5;
 
-    // Sincronização e Restauração de Dados Locais / TXT compartilhado
+    // Data limite de travamento: 25 de outubro de 2026, às 17:00
+    const DATA_BLOQUEIO = new Date('2026-10-25T17:00:00');
+
     function carregarDadosPersistidos() {
-      if (localStorage.getItem('urna_v3_candidatos')) {
-        candidatos = JSON.parse(localStorage.getItem('urna_v3_candidatos'));
-      }
-      if (localStorage.getItem('urna_v3_votos')) {
-        votos = JSON.parse(localStorage.getItem('urna_v3_votos'));
-      }
-      if (localStorage.getItem('urna_ips_votaram')) {
-        ipsVotaram = JSON.parse(localStorage.getItem('urna_ips_votaram'));
-      }
-      if (localStorage.getItem('urna_lista_visitantes')) {
-        listaVisitantes = JSON.parse(localStorage.getItem('urna_lista_visitantes'));
-      }
-      if (localStorage.getItem('urna_contador_visitas')) {
-        contadorVisitas = parseInt(localStorage.getItem('urna_contador_visitas')) || 0;
-      }
-      if (localStorage.getItem('urna_texto_sobre')) {
-        textoSobre = localStorage.getItem('urna_texto_sobre');
-      }
+      if (localStorage.getItem('urna_v3_candidatos')) candidatos = JSON.parse(localStorage.getItem('urna_v3_candidatos'));
+      if (localStorage.getItem('urna_v3_votos')) votos = JSON.parse(localStorage.getItem('urna_v3_votos'));
+      if (localStorage.getItem('urna_ips_votaram')) ipsVotaram = JSON.parse(localStorage.getItem('urna_ips_votaram'));
+      if (localStorage.getItem('urna_ips_multiplos')) ipsPermitidosMultiplos = JSON.parse(localStorage.getItem('urna_ips_multiplos'));
+      if (localStorage.getItem('urna_lista_visitantes')) listaVisitantes = JSON.parse(localStorage.getItem('urna_lista_visitantes'));
+      if (localStorage.getItem('urna_contador_visitas')) contadorVisitas = parseInt(localStorage.getItem('urna_contador_visitas')) || 0;
+      if (localStorage.getItem('urna_texto_sobre')) textoSobre = localStorage.getItem('urna_texto_sobre');
+      if (localStorage.getItem('urna_config_pix')) configPix = JSON.parse(localStorage.getItem('urna_config_pix'));
     }
     carregarDadosPersistidos();
 
@@ -730,22 +760,20 @@
       }
       clienteIP = ipAtual;
 
-      if (ipsVotaram.includes(clienteIP)) {
-        jaVotou = true;
-      }
-
       const dataHora = new Date().toLocaleString('pt-BR');
       contadorVisitas++;
       localStorage.setItem('urna_contador_visitas', contadorVisitas);
 
-      listaVisitantes.unshift({ id: Date.now(), ip: clienteIP, data: dataHora });
-      localStorage.setItem('urna_lista_visitantes', JSON.stringify(listaVisitantes));
+      if (!listaVisitantes.some(v => v.ip === clienteIP)) {
+        listaVisitantes.unshift({ id: Date.now(), ip: clienteIP, data: dataHora });
+        localStorage.setItem('urna_lista_visitantes', JSON.stringify(listaVisitantes));
+      }
 
       atualizarTela();
     }
 
     /* ==========================================================
-        ÁUDIO DA URNA ELETRÔNICA
+        ÁUDIO OFICIAL DE FIM DE VOTO (confirma-urna.mp3)
     ========================================================== */
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -763,78 +791,131 @@
     }
 
     function tocarSomFimUrna() {
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      const t = audioCtx.currentTime;
-      const osc1 = audioCtx.createOscillator();
-      const osc2 = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      const audio = new Audio('confirma-urna.mp3');
+      audio.play().catch(() => {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const t = audioCtx.currentTime;
+        
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
 
-      osc1.type = 'sine';
-      osc2.type = 'sine';
+        osc1.type = 'sine';
+        osc2.type = 'sine';
 
-      osc1.frequency.setValueAtTime(520, t);
-      osc1.frequency.setValueAtTime(780, t + 0.15);
+        osc1.frequency.setValueAtTime(1000, t);
+        osc1.frequency.setValueAtTime(1400, t + 0.1);
+        osc1.frequency.setValueAtTime(1800, t + 0.2);
 
-      osc2.frequency.setValueAtTime(660, t);
-      osc2.frequency.setValueAtTime(980, t + 0.15);
+        osc2.frequency.setValueAtTime(1200, t);
+        osc2.frequency.setValueAtTime(1600, t + 0.1);
+        osc2.frequency.setValueAtTime(2000, t + 0.2);
 
-      gain.gain.setValueAtTime(0.2, t);
-      gain.gain.linearRampToValueAtTime(0.2, t + 1.1);
-      gain.gain.linearRampToValueAtTime(0, t + 1.25);
+        gain.gain.setValueAtTime(0.2, t);
+        gain.gain.linearRampToValueAtTime(0, t + 0.4);
 
-      osc1.connect(gain);
-      osc2.connect(gain);
-      gain.connect(audioCtx.destination);
+        osc1.connect(gain);
+        osc2.connect(gain);
+        gain.connect(audioCtx.destination);
 
-      osc1.start(t);
-      osc2.start(t);
-      osc1.stop(t + 1.25);
-      osc2.stop(t + 1.25);
+        osc1.start(t);
+        osc2.start(t);
+        osc1.stop(t + 0.4);
+        osc2.stop(t + 0.4);
+      });
     }
 
     /* ==========================================================
-        TELA LCD E APURACAO SUSPENSA (Percentual de Votos)
+        TELA LCD & RENDERIZAÇÃO
     ========================================================== */
     function atualizarTela() {
       const lcd = document.getElementById('telaLCD');
+      const agora = new Date();
 
-      if (jaVotou) {
-        // Exibir contagem em tabela suspensa (sem linhas e marcações) com percentuais
+      if (agora >= DATA_BLOQUEIO) {
+        let vencedorNome = "EMPATE / SEM VOTOS";
+        let maxVotos = -1;
+
+        candidatos.forEach(c => {
+          let qtd = votos.filter(v => v.numero === c.numero).length;
+          if (qtd > maxVotos) {
+            maxVotos = qtd;
+            vencedorNome = c.nome;
+          }
+        });
+
+        lcd.innerHTML = `
+          <div class="lcd-header" style="background:#800; color:#fff;"><span>ENCERRADO</span><span>RESULTADO FINAL</span></div>
+          <div class="lcd-body" style="flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:6px;">
+            <div style="font-size:12px; color:#500;"><b>VOTAÇÃO ENCERRADA</b></div>
+            <div style="font-size:13px;">VENCEDOR: <br><b style="font-size:16px;">${vencedorNome}</b> - <b>VENCEDOR</b></div>
+          </div>
+          <div class="lcd-instrucoes" style="text-align:center;">Prazos legais encerrados em 25/10/2026 às 17h.</div>
+        `;
+        return;
+      }
+
+      // Tela 1: Apuração (Início)
+      if (telaAtual === 'apuracao') {
         let totalVotos = votos.length;
         let brancos = votos.filter(v => v.tipo === 'BRANCO').length;
         let nulos = votos.filter(v => v.tipo === 'NULO').length;
 
         let htmlApuracao = `
           <div class="tabela-apuracao-suspensa">
-            <div style="text-align:center; font-size:12px; margin-bottom:4px;"><b>APURAÇÃO DOS VOTOS</b></div>
-            <div class="linha-apuracao"><span>Total de Votos:</span> <span><b>${totalVotos}</b></span></div>
+            <div style="text-align:center; font-size:11px; margin-bottom:2px;"><b>APURAÇÃO DOS VOTOS</b></div>
         `;
 
         candidatos.forEach(c => {
           let qtd = votos.filter(v => v.numero === c.numero).length;
           let perc = totalVotos > 0 ? ((qtd / totalVotos) * 100).toFixed(1) : '0.0';
-          htmlApuracao += `<div class="linha-apuracao"><span>${c.nome} (${c.partido}):</span> <span>${qtd} (${perc}%)</span></div>`;
+          htmlApuracao += `<div class="linha-apuracao"><span>${c.nome} (${c.partido}):</span> <span><b>${qtd} votos (${perc}%)</b></span></div>`;
         });
 
         let percBranco = totalVotos > 0 ? ((brancos / totalVotos) * 100).toFixed(1) : '0.0';
         let percNulo = totalVotos > 0 ? ((nulos / totalVotos) * 100).toFixed(1) : '0.0';
 
         htmlApuracao += `
-            <div class="linha-apuracao"><span>Brancos:</span> <span>${brancos} (${percBranco}%)</span></div>
-            <div class="linha-apuracao"><span>Nulos:</span> <span>${nulos} (${percNulo}%)</span></div>
+            <div class="linha-apuracao"><span>Brancos:</span> <span><b>${brancos} (${percBranco}%)</b></span></div>
+            <div class="linha-apuracao"><span>Nulos:</span> <span><b>${nulos} (${percNulo}%)</b></span></div>
           </div>
         `;
 
         lcd.innerHTML = `
-          <div class="lcd-header"><span>VOTO JÁ REGISTRADO</span><span>RESULTADO PARCIAL</span></div>
+          <div class="lcd-header"><span>RESULTADO PARCIAL</span><span>URNA ELETRÔNICA</span></div>
           <div class="lcd-body" style="align-items:center;">${htmlApuracao}</div>
-          <div class="lcd-instrucoes" style="text-align:center;">Voto computado com sucesso no sistema.</div>
+          <div class="lcd-instrucoes" style="text-align:center; font-size:11px; padding:3px;">
+            <b style="cursor:pointer; color:#041c04; text-decoration:underline; font-size:14px;" onclick="irParaVotacao()">VOTAR</b>
+          </div>
         `;
         return;
       }
 
-      const etapa = ETAPAS[etapaAtual];
+      // Tela de QR Code Pix
+      if (telaAtual === 'qrcode') {
+        let dadosQr = encodeURIComponent(`PIX:${configPix.chave}|VALOR:${configPix.valor}|BENEFICIARIO:${configPix.nome}`);
+        lcd.innerHTML = `
+          <div class="lcd-header"><span>VOTO CONFIRMADO</span><span>PIX</span></div>
+          <div class="lcd-body" style="flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:2px; font-size:10px;">
+            <div style="font-size:15px; margin-bottom:1px;"><b style="cursor:pointer; color:#041c04; text-decoration:underline;" onclick="irParaVotacao()">VOTAR</b></div>
+            <div style="font-size:9px;"><b>${configPix.assunto}</b> (R$ ${configPix.valor})</div>
+            <div style="background:#fff; padding:2px; border-radius:4px; border:1px solid #486148;">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=75x75&data=${dadosQr}" alt="QR Code Pix" style="display:block;">
+            </div>
+            <div style="font-size:8px; word-break:break-all; max-width:220px;">
+              Chave: <b>${configPix.chave}</b><br>
+              <span style="cursor:pointer; color:#0056b3; text-decoration:underline;" onclick="copiarPayloadPix()"><b>[Copiar Código Pix Copia e Cola]</b></span>
+            </div>
+          </div>
+          <div class="lcd-instrucoes" style="text-align:center;">
+            <button onclick="irParaApuracao()" style="background:#333; color:#fff; border:none; padding:2px 8px; border-radius:3px; font-size:9px; cursor:pointer;">SAIR</button>
+          </div>
+        `;
+        return;
+      }
 
+      // Tela de Digitação do Voto
+      const etapa = ETAPAS[etapaAtual];
       if (!etapa) {
         lcd.innerHTML = `<div class="tela-fim">FIM</div>`;
         tocarSomFimUrna();
@@ -842,13 +923,13 @@
           etapaAtual = 0;
           numeroDigitado = '';
           votoBranco = false;
+          telaAtual = 'qrcode';
           atualizarTela();
-        }, 2500);
+        }, 2000);
         return;
       }
 
       const cand = candidatos.find(c => c.numero === numeroDigitado);
-
       let digitosHTML = '';
       for (let i = 0; i < etapa.digitos; i++) {
         const char = numeroDigitado[i] || '';
@@ -870,8 +951,8 @@
             <div class="cargo-titulo">${etapa.titulo}</div>
             <div class="caixas-numero">${digitosHTML}</div>
             <div class="dado-candidato">
-              Nome: <b>${cand.nome}</b><br>
-              Partido: <b>${cand.partido}</b>
+              Nome: <b style="font-size:15px;">${cand.nome}</b><br>
+              Partido: <b style="font-size:14px;">${cand.partido}</b>
             </div>
           </div>
           <div class="lcd-foto-container">
@@ -884,8 +965,8 @@
             <div class="cargo-titulo">${etapa.titulo}</div>
             <div class="caixas-numero">${digitosHTML}</div>
             <div class="dado-candidato" style="margin-top:4px; color:#600;">
-              <b>NÚMERO ERRADO</b><br>
-              <b>VOTO NULO</b>
+              <b style="font-size:13px;">NÚMERO ERRADO</b><br>
+              <b style="font-size:13px;">VOTO NULO</b>
             </div>
           </div>
         `;
@@ -907,11 +988,31 @@
       `;
     }
 
+    function irParaVotacao() {
+      if (ipsVotaram.includes(clienteIP) && !ipsPermitidosMultiplos.includes(clienteIP)) {
+        alert('Atenção: Este IP já registrou um voto nesta urna.');
+        telaAtual = 'apuracao';
+        atualizarTela();
+        return;
+      }
+      telaAtual = 'votacao';
+      etapaAtual = 0;
+      numeroDigitado = '';
+      votoBranco = false;
+      atualizarTela();
+    }
+
+    function irParaApuracao() {
+      telaAtual = 'apuracao';
+      atualizarTela();
+    }
+
     /* ==========================================================
-        AÇÕES DO TECLADO E TELA DE QR CODE APÓS CONFIRMAR
+        AÇÕES DE VOTAÇÃO E PIX
     ========================================================== */
     function digitar(n) {
-      if (votoBranco || jaVotou) return;
+      if (telaAtual !== 'votacao') return;
+      if (votoBranco) return;
       const max = ETAPAS[etapaAtual].digitos;
       if (numeroDigitado.length < max) {
         tocarBeep();
@@ -921,7 +1022,7 @@
     }
 
     function votarBranco() {
-      if (jaVotou) return;
+      if (telaAtual !== 'votacao') return;
       if (numeroDigitado === '') {
         tocarBeep();
         votoBranco = true;
@@ -930,7 +1031,7 @@
     }
 
     function corrigir() {
-      if (jaVotou) return;
+      if (telaAtual !== 'votacao') return;
       tocarBeep(1000);
       numeroDigitado = '';
       votoBranco = false;
@@ -938,7 +1039,7 @@
     }
 
     function confirmar() {
-      if (jaVotou) return;
+      if (telaAtual !== 'votacao') return;
       const etapa = ETAPAS[etapaAtual];
       let votoRegistrado = null;
 
@@ -957,103 +1058,84 @@
         votos.push(votoRegistrado);
         localStorage.setItem('urna_v3_votos', JSON.stringify(votos));
 
-        ipsVotaram.push(clienteIP);
-        localStorage.setItem('urna_ips_votaram', JSON.stringify(ipsVotaram));
-        jaVotou = true;
+        if (!ipsVotaram.includes(clienteIP)) {
+          ipsVotaram.push(clienteIP);
+          localStorage.setItem('urna_ips_votaram', JSON.stringify(ipsVotaram));
+        }
 
         etapaAtual++;
         numeroDigitado = '';
         votoBranco = false;
 
-        // Exibir tela intermediária com QR Code e justificativa
-        mostrarTelaQrCodeComJustificativa();
+        tocarSomFimUrna();
+        telaAtual = 'qrcode';
+        atualizarTela();
       }
     }
 
-    function mostrarTelaQrCodeComJustificativa() {
-      const lcd = document.getElementById('telaLCD');
-      tocarSomFimUrna();
-
-      let dadosParaQr = encodeURIComponent(JSON.stringify({ votoRecente: votos[votos.length - 1], totalVotos: votos.length }));
-      let qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${dadosParaQr}`;
-
-      lcd.innerHTML = `
-        <div class="lcd-header"><span>COMPROVANTE DE VOTAÇÃO</span><span>QR CODE</span></div>
-        <div class="lcd-body" style="flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:4px;">
-          <img src="${qrCodeUrl}" alt="QR Code do Voto" style="width:90px; height:90px; border:2px solid #041c04; background:#fff;">
-          <div style="font-size:9px; line-height:1.1; max-width:230px;">
-            <b>Comprovante gerado.</b> Este QR Code armazena os dados do voto criptografados e pode ser auditado ou editado pelo administrador no painel de controle, incluindo valores e registros.
-          </div>
-        </div>
-        <div class="lcd-instrucoes" style="text-align:center;">Retornando à tela inicial em instantes...</div>
-      `;
-
-      // Após 6 segundos, muda para a tela de bloqueio com a tabela suspensa de percentuais
-      setTimeout(() => {
-        atualizarTela();
-      }, 6000);
+    function copiarPayloadPix() {
+      navigator.clipboard.writeText(configPix.payload).then(() => {
+        alert('Código PIX Copia e Cola copiado com sucesso!');
+      }).catch(() => {
+        alert('Erro ao copiar código PIX.');
+      });
     }
 
     /* ==========================================================
-        NAVEGAÇÃO E MODAIS
+        ADMINISTRAÇÃO E PAINEL
     ========================================================== */
-    function navegarEnter(event, proximoId) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        const proximo = document.getElementById(proximoId);
-        if (proximo) proximo.focus();
+    function abrirLoginAdmin() {
+      document.getElementById('senhaAdmin').value = '';
+      document.getElementById('modalLogin').style.display = 'flex';
+      setTimeout(() => document.getElementById('senhaAdmin').focus(), 150);
+    }
+
+    function autenticarAdmin() {
+      const senha = document.getElementById('senhaAdmin').value;
+      if (gerarHash(senha) === ADMIN_PASS_HASH) {
+        fecharModal('modalLogin');
+        abrirPainelAdmin();
+      } else {
+        alert('Senha incorreta!');
       }
     }
 
-    function abrirLoginAdmin() {
-      document.getElementById('modalLogin').style.display = 'flex';
-      setTimeout(() => document.getElementById('senhaAdmin').focus(), 150);
+    function abrirPainelAdmin() {
+      document.getElementById('modalPainel').style.display = 'flex';
+      mostrarAba('abaCad');
+      renderizarTabelaCandidatos();
+      renderizarListaIps();
+      document.getElementById('textoSobreInput').value = textoSobre;
+      document.getElementById('pixAssunto').value = configPix.assunto;
+      document.getElementById('pixValor').value = configPix.valor;
+      document.getElementById('pixChave').value = configPix.chave;
+      document.getElementById('pixNome').value = configPix.nome;
+      document.getElementById('pixCidade').value = configPix.cidade;
+      document.getElementById('pixPayload').value = configPix.payload;
     }
 
     function fecharModal(id) {
       document.getElementById(id).style.display = 'none';
     }
 
-    function abrirModalSobre() {
-      document.getElementById('conteudoSobreTexto').innerText = textoSobre;
-      document.getElementById('modalSobre').style.display = 'flex';
-    }
-
-    function autenticarAdmin() {
-      const entrada = document.getElementById('senhaAdmin').value;
-      if (gerarHash(entrada) === ADMIN_PASS_HASH) {
-        document.getElementById('senhaAdmin').value = '';
-        fecharModal('modalLogin');
-        document.getElementById('modalPainel').style.display = 'flex';
-        renderizarTabelaCandidatos();
-        mostrarAba('abaCad');
-      } else {
-        alert('Senha Incorreta!');
-      }
-    }
-
     function mostrarAba(abaId) {
-      document.getElementById('abaCad').style.display = abaId === 'abaCad' ? 'block' : 'none';
-      document.getElementById('abaRel').style.display = abaId === 'abaRel' ? 'block' : 'none';
-      document.getElementById('abaSobreAdmin').style.display = abaId === 'abaSobreAdmin' ? 'block' : 'none';
-      document.getElementById('abaIps').style.display = abaId === 'abaIps' ? 'block' : 'none';
-
-      if (abaId === 'abaCad') {
-        setTimeout(() => document.getElementById('cadNome').focus(), 150);
-      } else if (abaId === 'abaSobreAdmin') {
-        document.getElementById('textoSobreInput').value = textoSobre;
-      } else if (abaId === 'abaIps') {
+      ['abaCad', 'abaRel', 'abaSobreAdmin', 'abaIps', 'abaPix'].forEach(id => {
+        document.getElementById(id).style.display = (id === abaId) ? 'block' : 'none';
+      });
+      if (abaId === 'abaIps') {
         renderizarListaIps();
       }
     }
 
-    /* ==========================================================
-        GERENCIAMENTO DE CANDIDATOS E SOBRE
-    ========================================================== */
-    function salvarTextoSobre() {
-      textoSobre = document.getElementById('textoSobreInput').value;
-      localStorage.setItem('urna_texto_sobre', textoSobre);
-      alert('Texto "Sobre" atualizado com sucesso!');
+    function salvarConfigPix() {
+      configPix.assunto = document.getElementById('pixAssunto').value.toUpperCase();
+      configPix.valor = document.getElementById('pixValor').value.trim() || '0.00';
+      configPix.chave = document.getElementById('pixChave').value;
+      configPix.nome = document.getElementById('pixNome').value.toUpperCase();
+      configPix.cidade = document.getElementById('pixCidade').value.toUpperCase();
+      configPix.payload = document.getElementById('pixPayload').value;
+      localStorage.setItem('urna_config_pix', JSON.stringify(configPix));
+      alert('Configurações do PIX salvas com sucesso!');
     }
 
     function converterFotoBase64(input, modo) {
@@ -1095,7 +1177,6 @@
       fotoFileInput.value = '';
       fotoTempBase64Novo = '';
 
-      nomeInput.focus();
       renderizarTabelaCandidatos();
       atualizarTela();
       alert('Candidato cadastrado!');
@@ -1163,9 +1244,17 @@
       tabela.innerHTML = html;
     }
 
-    /* ==========================================================
-        GERENCIAMENTO DE IPs E EXCLUSÃO
-    ========================================================== */
+    function salvarTextoSobre() {
+      textoSobre = document.getElementById('textoSobreInput').value;
+      localStorage.setItem('urna_texto_sobre', textoSobre);
+      alert('Texto "Sobre" atualizado com sucesso!');
+    }
+
+    function abrirModalSobre() {
+      document.getElementById('conteudoSobreTexto').innerText = textoSobre;
+      document.getElementById('modalSobre').style.display = 'flex';
+    }
+
     function renderizarListaIps() {
       document.getElementById('contadorVisitas').innerText = contadorVisitas;
       const container = document.getElementById('listaIpsContainer');
@@ -1184,15 +1273,17 @@
       const itensPagina = listaVisitantes.slice(inicio, fim);
 
       let html = '<table style="width:100%; border-collapse: collapse;">';
-      html += '<tr style="border-bottom:1px solid #ccc;"><th>IP / Dispositivo</th><th>Data / Hora</th><th>Ação</th></tr>';
+      html += '<tr style="border-bottom:1px solid #ccc;"><th>IP</th><th>Data/Hora</th><th>Permitir Vários Votos</th><th>Ação</th></tr>';
       
       itensPagina.forEach((v) => {
         let destaque = (v.ip === clienteIP) ? ' style="color:#007bff;"' : '';
+        let permitido = ipsPermitidosMultiplos.includes(v.ip) ? 'checked' : '';
         html += `
           <tr${destaque} style="border-bottom:1px solid #eee;">
-            <td style="padding:3px 0;">${v.ip}</td>
+            <td style="padding:2px 0;">${v.ip}</td>
             <td>${v.data}</td>
-            <td><button onclick="excluirIpRegistro(${v.id})" style="background:#dc3545;color:#fff;border:none;padding:2px 5px;border-radius:3px;cursor:pointer;font-size:10px;">Excluir</button></td>
+            <td style="text-align:center;"><input type="checkbox" ${permitido} onclick="toggleMultiplosVotos('${v.ip}', this)" title="Marcar para permitir múltiplos votos para testes"></td>
+            <td><button onclick="excluirIpRegistro(${v.id})" style="background:#dc3545;color:#fff;border:none;padding:2px 4px;border-radius:3px;cursor:pointer;font-size:9px;">Excluir</button></td>
           </tr>
         `;
       });
@@ -1202,6 +1293,15 @@
       document.getElementById('infoPaginacao').innerText = `Página ${paginaAtualIp} de ${totalPaginas}`;
       document.getElementById('btnPagAnt').disabled = paginaAtualIp === 1;
       document.getElementById('btnPagProx').disabled = paginaAtualIp >= totalPaginas;
+    }
+
+    function toggleMultiplosVotos(ip, checkbox) {
+      if (checkbox.checked) {
+        if (!ipsPermitidosMultiplos.includes(ip)) ipsPermitidosMultiplos.push(ip);
+      } else {
+        ipsPermitidosMultiplos = ipsPermitidosMultiplos.filter(i => i !== ip);
+      }
+      localStorage.setItem('urna_ips_multiplos', JSON.stringify(ipsPermitidosMultiplos));
     }
 
     function excluirIpRegistro(id) {
@@ -1227,9 +1327,6 @@
       link.click();
     }
 
-    /* ==========================================================
-        RELATÓRIOS E GITHUB SYNC TXT AUTOMÁTICO
-    ========================================================== */
     function imprimirZeresima() {
       const area = document.getElementById('areaImpressao');
       area.style.display = 'block';
@@ -1237,7 +1334,7 @@
       let html = `<div style="text-align:center; font-weight:bold;">JUSTIÇA ELETRÔNICA<br>RELATÓRIO DE ZERÉSIMA</div>`;
       html += `<div style="display:flex;justify-content:space-between;"><span>Urna Eletrônica Oficial</span><span>Status: OK</span></div>`;
       html += `<div style="display:flex;justify-content:space-between;"><span>Data/Hora:</span><span>${new Date().toLocaleString('pt-BR')}</span></div>`;
-      html += `<hr style="border:0; border-top:1px dashed #666; margin:6px 0;">`;
+      html += `<hr style="border:0; border-top:1px dashed #666; margin:5px 0;">`;
       html += `<b>Candidatos aptos:</b><br>`;
       
       candidatos.forEach(c => {
@@ -1257,15 +1354,16 @@
 
       let html = `<div style="text-align:center; font-weight:bold;">JUSTIÇA ELETRÔNICA<br>BOLETIM DE URNA (BU)</div>`;
       html += `<div style="display:flex;justify-content:space-between;"><span>Total de Eleitores:</span><span>${totalVotos}</span></div>`;
-      html += `<hr style="border:0; border-top:1px dashed #666; margin:6px 0;">`;
+      html += `<hr style="border:0; border-top:1px dashed #666; margin:5px 0;">`;
       html += `<b>Apuração Final:</b><br>`;
 
       candidatos.forEach(c => {
         let qtd = votos.filter(v => v.numero === c.numero).length;
-        html += `<div style="display:flex;justify-content:space-between;"><span>[${c.numero}] ${c.nome}:</span><span><b>${qtd} voto(s)</b></span></div>`;
+        let perc = totalVotos > 0 ? ((qtd / totalVotos) * 100).toFixed(1) : '0.0';
+        html += `<div style="display:flex;justify-content:space-between;"><span>[${c.numero}] ${c.nome}:</span><span><b>${qtd} votos (${perc}%)</b></span></div>`;
       });
 
-      html += `<div style="display:flex;justify-content:space-between; margin-top:4px;"><span>Brancos:</span><span>${brancos}</span></div>`;
+      html += `<div style="display:flex;justify-content:space-between; margin-top:3px;"><span>Brancos:</span><span>${brancos}</span></div>`;
       html += `<div style="display:flex;justify-content:space-between;"><span>Nulos:</span><span>${nulos}</span></div>`;
 
       area.innerHTML = html;
@@ -1276,8 +1374,10 @@
         candidatos: candidatos,
         votos: votos,
         ipsVotaram: ipsVotaram,
+        ipsPermitidosMultiplos: ipsPermitidosMultiplos,
         visitantes: listaVisitantes,
-        texto_sobre: textoSobre
+        texto_sobre: textoSobre,
+        configPix: configPix
       };
 
       let textoConteudo = JSON.stringify(dadosGerais, null, 2);
@@ -1286,19 +1386,29 @@
       link.href = URL.createObjectURL(blob);
       link.download = 'dados_urna_github.txt';
       link.click();
-      alert('Arquivo TXT gerado com sucesso! Salve-o no seu repositório do GitHub para sincronização dos usuários.');
+      alert('Arquivo TXT gerado com sucesso!');
     }
 
     function zerarVotos() {
       if (confirm('ATENÇÃO: Deseja realmente zerar toda a votação e os registros de IPs?')) {
         votos = [];
         ipsVotaram = [];
-        jaVotou = false;
+        ipsPermitidosMultiplos = [];
+        telaAtual = 'apuracao';
         localStorage.removeItem('urna_v3_votos');
         localStorage.removeItem('urna_ips_votaram');
+        localStorage.removeItem('urna_ips_multiplos');
         document.getElementById('areaImpressao').style.display = 'none';
         atualizarTela();
         alert('Urna zerada com sucesso!');
+      }
+    }
+
+    function navegarEnter(event, proximoId) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const proximo = document.getElementById(proximoId);
+        if (proximo) proximo.focus();
       }
     }
 
